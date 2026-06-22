@@ -1,0 +1,362 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+/* === 全局 CSS 变量（亮色模式） === */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 221.2 83.2% 53.3%;
+  --radius: 0.5rem;
+}
+
+/* === 暗色模式 CSS 变量 === */
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 6.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 6.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 48%;
+}
+
+/* === 全局基础样式 === */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  min-width: 1280px;
+}
+
+/* 暗色模式下整体背景色过渡 */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark body {
+  background-color: #0f172a;  /* slate-900 */
+  color: #e2e8f0;  /* slate-200 */
+}
+
+/* 暗色模式下侧边栏适配 */
+html.dark .bg-slate-900 {
+  background-color: #020617;  /* slate-950 */
+}
+
+/* 暗色模式下卡片/面板适配 */
+html.dark .bg-white {
+  background-color: #1e293b;  /* slate-800 */
+}
+
+html.dark .border-slate-200 {
+  border-color: #334155;  /* slate-700 */
+}
+
+html.dark .border-slate-100 {
+  border-color: #1e293b;  /* slate-800 */
+}
+
+html.dark .text-slate-700 {
+  color: #cbd5e1;  /* slate-300 */
+}
+
+html.dark .text-slate-600 {
+  color: #94a3b8;  /* slate-400 */
+}
+
+html.dark .text-slate-500 {
+  color: #64748b;  /* slate-500 */
+}
+
+html.dark .text-slate-400 {
+  color: #64748b;  /* slate-500 */
+}
+
+html.dark .bg-slate-50 {
+  background-color: #0f172a;  /* slate-900 */
+}
+
+html.dark .hover\:bg-slate-50:hover {
+  background-color: #1e293b;  /* slate-800 */
+}
+
+html.dark .bg-slate-100 {
+  background-color: #1e293b;  /* slate-800 */
+}
+
+html.dark .bg-blue-50 {
+  background-color: #1e3a5f;  /* blue-900/50 */
+}
+
+html.dark .bg-green-50 {
+  background-color: #14532d;  /* green-900/50 */
+}
+
+html.dark .bg-green-100 {
+  background-color: #14532d;
+}
+
+html.dark .text-green-700 {
+  color: #86efac;  /* green-300 */
+}
+
+html.dark .bg-blue-100 {
+  background-color: #1e3a5f;
+}
+
+html.dark .text-blue-700 {
+  color: #93c5fd;  /* blue-300 */
+}
+
+html.dark .bg-orange-100 {
+  background-color: #7c2d12;
+}
+
+html.dark .text-orange-700 {
+  color: #fdba74;  /* orange-300 */
+}
+
+html.dark .bg-purple-100 {
+  background-color: #3b0764;
+}
+
+html.dark .text-purple-700 {
+  color: #d8b4fe;  /* purple-300 */
+}
+
+html.dark .bg-slate-100 {
+  background-color: #334155;
+}
+
+html.dark .text-slate-600 {
+  color: #94a3b8;
+}
+
+/* 暗色模式下输入框适配 */
+html.dark input,
+html.dark select,
+html.dark textarea {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #64748b;
+}
+
+html.dark input:focus,
+html.dark select:focus,
+html.dark textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+/* 暗色模式下编辑区适配 */
+html.dark .bg-blue-50 {
+  background-color: #172554;  /* blue-950 */
+}
+
+html.dark .border-blue-300 {
+  border-color: #2563eb;  /* blue-600 */
+}
+
+/* === 滚动条样式 === */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* === KaTeX 公式样式覆盖 === */
+.katex-display {
+  margin: 0.5em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.katex {
+  font-size: 1.05em;
+}
+
+/* === Monaco Editor 源码模式隔离 === */
+/* 确保 Monaco 的源码编辑区域不被 KaTeX 渲染引擎污染 */
+/* Monaco 内部使用自己的 iframe/shadow DOM，以下规则为额外保障 */
+.katex-preview {
+  contain: style;  /* CSS 隔离：样式不影响外部 */
+}
+
+/* Monaco 编辑器容器保持纯源码模式 */
+.monaco-editor {
+  font-family: "Cascadia Code", "Fira Code", "Consolas", "Courier New", monospace !important;
+}
+
+/* === 题号导航网格布局 === */
+.question-navigator-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+  padding: 8px;
+}
+
+.question-number-btn {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+/* === V2新增：题目配图样式 === */
+.question-content img,
+.preview-renderer img,
+.katex-preview img {
+  max-width: 100%;
+  height: auto;
+  margin: 8px 0;
+  border-radius: 4px;
+  border: 1px solid hsl(var(--border));
+  display: block;
+}
+
+/* === V2新增：PreviewRenderer 表格样式（不依赖 @tailwindcss/typography） === */
+.preview-renderer table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  display: block;
+}
+
+.preview-renderer thead {
+  background-color: hsl(var(--muted));
+}
+
+.preview-renderer th,
+.preview-renderer td {
+  border: 1px solid hsl(var(--border));
+  padding: 6px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.preview-renderer th {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.preview-renderer tbody tr:nth-child(even) {
+  background-color: hsl(var(--muted) / 0.5);
+}
+
+.preview-renderer h1,
+.preview-renderer h2,
+.preview-renderer h3,
+.preview-renderer h4,
+.preview-renderer h5,
+.preview-renderer h6 {
+  font-weight: 600;
+  margin: 12px 0 6px;
+  line-height: 1.3;
+}
+
+.preview-renderer p {
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+.preview-renderer ul,
+.preview-renderer ol {
+  margin: 6px 0;
+  padding-left: 24px;
+}
+
+.preview-renderer li {
+  margin: 2px 0;
+}
+
+.preview-renderer code {
+  background-color: hsl(var(--muted));
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-family: "Cascadia Code", "Fira Code", "Consolas", "Courier New", monospace;
+  font-size: 0.85em;
+}
+
+.preview-renderer pre {
+  background-color: hsl(var(--muted));
+  padding: 8px 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.preview-renderer pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* 图片加载失败时的占位提示 */
+.question-content img[src=""],
+.question-content img[alt=""] {
+  display: none;
+}
+
+/* 图片加载失败兜底 */
+.question-content img::before {
+  content: "图片加载失败";
+  display: block;
+  padding: 16px;
+  background: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+  text-align: center;
+  border-radius: 4px;
+  font-size: 12px;
+}

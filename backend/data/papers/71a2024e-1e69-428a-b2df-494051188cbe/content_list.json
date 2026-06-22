@@ -1,0 +1,386 @@
+[
+  {
+    "type": "text",
+    "text": "5. 周庄共有 400 公顷耕地, 秋季农作物的种植如图。结合两图可知周庄棉花的种植面积占总面积的( ), 扇形统计图中 $10 \\%$ 所代表的农作物是( )。( )",
+    "bbox": [
+      67,
+      61,
+      446,
+      143
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "chart",
+    "img_path": "images/6cfdbb52e13a1c1d3639515a10221e3690a336175570c3ce7c17040703c37542.jpg",
+    "content": "| 类别 | 面积/公顷 |\n|---|---|\n| 玉米 | 200 |\n| 谷子 | 40 |\n| 大豆 | 100 |\n| 棉花 | 55 |\n| 其他 | 5 |\n\n| 类别 | 数值 |\n| :--- | :--- |\n| 玉米 | 200 |\n| 谷子 | 40 |\n| 大豆 | 100 |\n| 棉花 | 55 |\n\n| 占比 (%) | 数值 |\n| :--- | :--- |\n| 玉米 | 1.25 |\n| 谷子 | 25 |\n| 大豆 | 50 |\n| 棉花 | 10 |",
+    "chart_caption": [],
+    "chart_footnote": [],
+    "sub_type": "bar chart",
+    "bbox": [
+      139,
+      153,
+      388,
+      303
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "A. 13.75%,谷子",
+    "bbox": [
+      80,
+      312,
+      167,
+      332
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "B. $13\\%$ ，谷子",
+    "bbox": [
+      257,
+      313,
+      324,
+      332
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "C. 13.75%, 棉花",
+    "bbox": [
+      80,
+      343,
+      166,
+      362
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "D. 13.75%, 大豆",
+    "bbox": [
+      257,
+      344,
+      342,
+      362
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "三、聪聪家 2018 年 5 月支出情况统计如下图, 其中该月的总支出是 3600 元。请你回答问题。(18 分)",
+    "text_level": 2,
+    "bbox": [
+      50,
+      373,
+      446,
+      423
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1. 这个月哪项支出最多？支出了多少元？",
+    "bbox": [
+      67,
+      431,
+      277,
+      452
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "2. 文化教育支出了多少元？购买衣物支出了多少元？",
+    "bbox": [
+      67,
+      518,
+      327,
+      568
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "chart",
+    "img_path": "images/f3434658f67f323fc8ab3ddeba57c07124ed030ba139d29c057b2934c8466260.jpg",
+    "content": "| 类别 | 占比 (%) |\n| :--- | :--- |\n| 水电支出 | 12 |\n| 伙食 | 35 |\n| 文化教育 | 25 |\n| 购买衣物 | 20 |\n| 其他 | 8 |",
+    "chart_caption": [],
+    "chart_footnote": [],
+    "sub_type": "pie chart",
+    "bbox": [
+      336,
+      430,
+      447,
+      603
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "3. 购买衣物的支出比文化教育支出少百分之几？少支出了多少元？",
+    "bbox": [
+      67,
+      639,
+      406,
+      660
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "四、阳光食品公司 2018 年上半年生产情况统计图。(18 分)",
+    "text_level": 2,
+    "bbox": [
+      50,
+      728,
+      350,
+      750
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "chart",
+    "img_path": "images/da68fcc32b230bb2d8478a2c936701d2c9521464888234035e1fe01c8ff5c2a7.jpg",
+    "content": "| 月份 | 产量/吨 |\n| :--- | :--- |\n| 一 | 14 |\n| 二 | 16 |\n| 三 | 18 |\n| 四 | 25 |\n| 五 | 21 |\n| 六 | 20 |",
+    "chart_caption": [],
+    "chart_footnote": [],
+    "sub_type": "bar chart",
+    "bbox": [
+      95,
+      758,
+      417,
+      894
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1. ( )月份的产量最高，( )月份的产量最低。",
+    "bbox": [
+      67,
+      904,
+      351,
+      924
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "2. 上半年月平均产量是多少吨?",
+    "bbox": [
+      508,
+      62,
+      670,
+      82
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "3. 六月份产量比二月份增长百分之几?",
+    "bbox": [
+      508,
+      142,
+      705,
+      162
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "五、琳琳将去年本地区上半年月平均气温做了如下统计:(10 分)",
+    "text_level": 2,
+    "bbox": [
+      491,
+      221,
+      813,
+      242
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "images/76957d9f43ada8887b41df37054decf2a7c01de4cd0bfd850fbca8ad5ebc069e.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>月份</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr><tr><td>气温/°C</td><td>0</td><td>1</td><td>2</td><td>7</td><td>12</td><td>18.5</td></tr></table>",
+    "bbox": [
+      554,
+      248,
+      842,
+      306
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "根据统计表完成下面统计图。",
+    "bbox": [
+      509,
+      312,
+      657,
+      332
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "chart",
+    "img_path": "images/16b9558b3c5952c9ca2c32efd80f8a147c3fc863d2facc0cf13d5276d6ec254d.jpg",
+    "content": "气温/℃\n月份\n| 月份 | 气温 (℃) |\n|---|---|\n| 1月 | 0 |\n| 2月 | 0 |\n| 3月 | 0 |\n| 4月 | 0 |\n| 5月 | 0 |\n| 6月 | 0 |\n| 7月 | 0 |\n| 8月 | 0 |\n| 9月 | 0 |\n| 10月 | 0 |\n| 11月 | 0 |\n| 12月 | 0 |\n| 1月 | 0 |\n| 2月 | 0 |\n| 3月 | 0 |\n| 4月 | 0 |\n| 5月 | 0 |\n| 6月 | 0 |\n| 7月 | 0 |\n| 8月 | 0 |\n| 9月 | 0 |\n| 10月 | 0 |\n| 11月 | 0 |\n| 12月 | 0 |",
+    "chart_caption": [],
+    "chart_footnote": [],
+    "sub_type": "line chart",
+    "bbox": [
+      594,
+      339,
+      801,
+      496
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "附加题。(10 分)",
+    "bbox": [
+      491,
+      500,
+      579,
+      521
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "如图是小明家四月份支出及储蓄情况统计图。",
+    "bbox": [
+      515,
+      527,
+      746,
+      548
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "chart",
+    "img_path": "images/eb4004067f55bc9965b972fc2f9c12de687db1f86c40de1fba9de9a6e61264ea.jpg",
+    "content": "| 类别 | 占比 (%) |\n|---|---|\n| 水电费 | 10 |\n| 购物 | 20 |\n| 伙食费 | 40 |\n| 储蓄 | 25 |\n| 其他支出 | 5 |",
+    "chart_caption": [],
+    "chart_footnote": [],
+    "sub_type": "pie chart",
+    "bbox": [
+      639,
+      555,
+      739,
+      690
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1. 小明家四月份的伙食费共花了 800 元, 小明家的总支出及储蓄分别是多少元?",
+    "bbox": [
+      514,
+      696,
+      887,
+      742
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "2. 根据扇形统计图, 把下表填写完整。",
+    "bbox": [
+      514,
+      803,
+      704,
+      822
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "images/f837ec5ca43ec8d43ab1a12bef257c9da0e8d2ed5782568d6e816f06d303a9ed.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>项目</td><td>伙食费</td><td>购物</td><td>水电费</td><td>储蓄</td><td>其他支出</td><td>总计</td></tr><tr><td>费用/元</td><td>800</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>百分比</td><td>40%</td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+    "bbox": [
+      526,
+      829,
+      880,
+      925
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "image",
+    "img_path": "images/0178d070d62a17fb69e17e4642b89efdae64e5a979197bbccbde0442c75a4e09.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "",
+    "bbox": [
+      904,
+      861,
+      952,
+      935
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "12",
+    "bbox": [
+      50,
+      930,
+      78,
+      967
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "BS·6年级·数学（上）",
+    "bbox": [
+      79,
+      948,
+      167,
+      964
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "footer",
+    "text": "关注微信公众号“教辅资料站”获取更多学习资料",
+    "bbox": [
+      374,
+      979,
+      620,
+      998
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "aside_text",
+    "text": "密----封----线",
+    "bbox": [
+      897,
+      201,
+      910,
+      693
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "aside_text",
+    "text": "老师点评",
+    "bbox": [
+      915,
+      746,
+      963,
+      765
+    ],
+    "page_idx": 0
+  }
+]

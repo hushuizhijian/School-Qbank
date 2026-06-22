@@ -1,0 +1,16 @@
+{
+  "app_name": "小学数学智能题库系统V2",
+  "debug": true,
+  "default_llm_provider": "DeepSeek",
+  "default_llm_model": "deepseek-chat",
+  "pipeline": {
+    "stop_on_error": true,
+    "max_retries": 3,
+    "ocr_enabled": false,
+    "vlm_enabled": false
+  },
+  "agent": {
+    "max_workflow_steps": 50,
+    "debug_mode": false
+  }
+}

@@ -1,0 +1,311 @@
+% This LaTeX document needs to be compiled with XeLaTeX.
+\documentclass[
+  10
+]{article}
+\usepackage[margin=2cm,includehead=true,includefoot=true,centering,]{geometry}
+\usepackage{xcolor}
+\usepackage{ucharclasses}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage{amsfonts}
+\usepackage[version=4]{mhchem}
+\usepackage{stmaryrd}
+\usepackage{bbold}
+\usepackage{polyglossia}
+\usepackage{fontspec}
+\usepackage{ctex}
+\usepackage[export]{adjustbox}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+\usepackage{setspace}
+\setstretch{1.2}
+
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=magenta, urlcolor=cyan,}
+\urlstyle{same}
+
+\usepackage{colortbl}
+\definecolor{table-row-color}{HTML}{999999}
+\definecolor{table-rule-color}{HTML}{999999}
+%\arrayrulecolor{black!40}
+\arrayrulecolor{table-rule-color}     % color of \toprule, \midrule, \bottomrule
+\setlength{\aboverulesep}{0pt}
+\setlength{\belowrulesep}{0pt}
+
+
+\setotherlanguages{english}
+\IfFontExistsTF{Source Han Serif CN}
+{\newfontfamily\chinesefont{Source Han Serif CN}}
+{\IfFontExistsTF{Noto Serif CJK SC}
+  {\newfontfamily\chinesefont{Noto Serif CJK SC}}
+  {\IfFontExistsTF{SimSun}
+    {\newfontfamily\chinesefont{SimSun}}
+    {\IfFontExistsTF{FangSong}
+      {\newfontfamily\chinesefont{FangSong}}
+      {\newfontfamily\chinesefont{Arial Unicode MS}}
+}}}
+\IfFontExistsTF{Times New Roman}
+{\newfontfamily\englishfont{Times New Roman}}
+{\IfFontExistsTF{Liberation Serif}
+  {\newfontfamily\englishfont{Liberation Serif}}
+  {\IfFontExistsTF{DejaVu Serif}
+    {\newfontfamily\englishfont{DejaVu Serif}}
+    {\newfontfamily\englishfont{Arial}}
+}}
+
+
+\author{}
+\date{}
+
+\begin{document}
+
+
+\section{黄冈名卷}\label{ux9ec4ux5188ux540dux5377}
+
+\section{第四单元知识回顾与检测}\label{ux7b2cux56dbux5355ux5143ux77e5ux8bc6ux56deux987eux4e0eux68c0ux6d4b}
+
+\section{百分数}\label{ux767eux5206ux6570}
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/f84bb28b5b38c2f577d6aa4c5add3ef10087f10418fc2ddbfbc955d44c2ff47a.jpg}}
+
+满分:100 分 时间:60 分钟
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}|l|l|l|l|l|l|l|l|l|@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\hline
+题 号 & 一 & 二 & 三 & 四 & 五 & 六 & 附加题 & 总 分 \\
+\hline
+得 分 & & & & & & & & \\
+\hline
+\end{longtable}
+}
+
+\subsection{一、填空。(20 分)}\label{ux4e00ux586bux7a7a20-ux5206}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  表示一个数是另一个数的百分之几的数, 叫作( )。百分数又叫作( )、(
+  )。百分数通常不写成分数形式, 而在原来的分子后面加上( )来表示,
+  例如百分之三十五写作( )。
+\item
+  六(2)班有学生 50 人, 其中女生有 27 人, 男生有 23 人, 男生占总人数的 (
+  )\%, 女生占总人数的 ( )\%。
+\item
+  \(3 \div 4 = \frac{(\quad)}{4} = (\quad)\) (填小数) = ( )\%
+\item
+  油葵的出油率是指( )的质量占( )质量的百分之几。
+\item
+  某实验所用 103 粒玉米种子做发芽试验, 全部发芽, 发芽率是( )\%。
+\item
+  一条绳子长为 60 米, 剪去 45\%, 剪去( )米。
+\item
+  六一期间,新华书店举行``买四赠一''活动,该活动相当于打(
+  )折销售。王老师买了40本原价为10元的书,只需付( )元。
+\item
+  一批水果, 运走 75\%, 还剩( )\%没运走。
+\end{enumerate}
+
+9.100 是 80 的( )\%, 80 是 100 的( )\%。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  李师傅加工 200 个零件,有 3 个不合格,合格率为( )\%。
+\end{enumerate}
+
+\subsection{二、判断。(10 分)}\label{ux4e8cux5224ux65ad10-ux5206}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \(\frac{85}{100}\) 厘米可以改写成 \(85 \%\) 厘米。 （ ）
+\item
+  在食品质量检测中, 果冻的合格率为 88\%, 饼干的合格率为
+  96\%。饼干的合格率比较高。 ( )
+\end{enumerate}
+
+3.栽了105棵树,全部成活,这批树的成活率是 \(105\%\) 。 （）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\item
+  把 5 克盐放入 100 克水中, 盐的质量占盐水质量的 \(5 \%\) 。 （）
+\item
+  百分数可以表示百分率, 也可以表示数量。 ( )
+\end{enumerate}
+
+\subsection{三、选择。(10 分)}\label{ux4e09ux9009ux62e910-ux5206}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  某科研公司有 110 人, 今天有 10 人没有出勤, 今天该公司的出勤率为( )。
+\end{enumerate}
+
+A. \(100\%\)
+
+B. 90\%
+
+C. \(90.9\%\)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  把 3.7\% 的百分号去掉, 则这个数( )。
+\end{enumerate}
+
+A. 扩大为原来的 100 倍
+
+B. 缩小到原来的 \(\frac{1}{100}\)
+
+C. 大小不变
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  有 100 克含糖 15\% 的糖水, 如果再放入 50 克水, 那么糖水含糖( )。
+\end{enumerate}
+
+A. \(7.5\%\)
+
+B. \(10\%\)
+
+C. 约 11.5\%
+
+D. \(15\%\)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  一辆自行车原价相同, 甲商场在打八折的基础上再打八折出售,
+  乙商场在打九折的基础上再打七折出售, 则( )商场卖得便宜。
+\end{enumerate}
+
+A. 甲
+
+B. 乙
+
+C. 无法确定
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  如果 A 仓库存粮的 20\% 与 B 仓库存粮的 30\% 相等 (A、B 仓库均有余粮),
+  那么 A 仓库存粮 ( ) B 仓库存粮。
+\end{enumerate}
+
+A. 多于
+
+B. 等于
+
+C. 少于
+
+\subsection{四、数的互化。(16
+分)}\label{ux56dbux6570ux7684ux4e92ux531616-ux5206}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  把下面各数化成百分数。(8 分)
+\end{enumerate}
+
+\[
+\frac {4}{5} =
+\]
+
+\[
+0. 0 9 =
+\]
+
+\[
+\frac {1 3}{2 5} =
+\]
+
+\[
+1 \frac {1}{4} =
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  把下面的百分数化成分数。(8 分)
+\end{enumerate}
+
+\[
+37 \% =
+\]
+
+\[
+62.5 \% =
+\]
+
+\[
+25 \% =
+\]
+
+\[
+40 \% =
+\]
+
+\end{document}

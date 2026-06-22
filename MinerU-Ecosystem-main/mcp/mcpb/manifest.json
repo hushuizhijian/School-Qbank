@@ -1,0 +1,89 @@
+{
+  "manifest_version": "0.4",
+  "name": "mineru-open-mcp",
+  "display_name": "MinerU Open MCP",
+  "version": "1.0.21",
+  "description": "Parse PDFs, Word docs, PowerPoint files, spreadsheets, and images into Markdown using MinerU's document parsing API.",
+  "long_description": "MinerU Open MCP connects any MCP-compatible AI client to MinerU's document parsing engine. Convert PDFs, DOCX, PPTX, images, and HTML, xlsx files into clean Markdown. Flash mode works out of the box — free, no sign-up required. Provide a MinerU API token to unlock higher limits and additional output formats.",
+  "author": {
+    "name": "OpenDataLab",
+    "email": "OpenDataLab@pjlab.org.cn",
+    "url": "https://github.com/opendatalab/MinerU-Ecosystem"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opendatalab/MinerU-Ecosystem.git"
+  },
+  "homepage": "https://mineru.net",
+  "icon": "icon.png",
+  "documentation": "https://github.com/opendatalab/MinerU-Ecosystem/blob/main/mcp/README.md",
+  "support": "https://github.com/opendatalab/MinerU-Ecosystem/issues",
+  "server": {
+    "type": "uv",
+    "entry_point": "pyproject.toml",
+    "mcp_config": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${__dirname}",
+        "mineru-open-mcp"
+      ],
+      "env": {
+        "MINERU_API_TOKEN": "${user_config.MINERU_API_TOKEN}",
+        "OUTPUT_DIR": "${user_config.OUTPUT_DIR}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "parse_documents",
+      "description": "Convert PDF, Office, images, and public URLs to Markdown via the MinerU cloud API. Uploads content to mineru.net (do not use for data that must stay on-device); does not modify originals; may write .md under output_dir. Without MINERU_API_TOKEN: Flash mode—Markdown only. With token: higher limits. use get_ocr_languages only to list OCR codes, not to convert files. Parameters: file_sources paths or {\"source\",\"pages\"} for PDF ranges; language OCR codes;"
+    },
+    {
+      "name": "get_ocr_languages",
+      "description": "Return supported MinerU OCR/script codes (read-only, no uploads). Use before setting language on parse_documents. Do not use for file conversion — call parse_documents instead."
+    }
+  ],
+  "keywords": [
+    "pdf",
+    "document",
+    "parsing",
+    "markdown",
+    "ocr",
+    "mineru",
+    "converter",
+    "docx",
+    "pptx"
+  ],
+  "license": "MIT",
+  "privacy_policies": [
+    "https://webpub.shlab.tech/dps/opendatalab-web/odl_v5.2104/privacy-en.html"
+  ],
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "python": ">=3.10,<4.0"
+    }
+  },
+  "user_config": {
+    "MINERU_API_TOKEN": {
+      "type": "string",
+      "title": "MinerU API Token",
+      "description": "API token for full capability — higher page limits. Leave empty to use free Flash mode (lower limits are applied). Get your token at https://mineru.net.",
+      "sensitive": true,
+      "required": false,
+      "default": ""
+    },
+    "OUTPUT_DIR": {
+      "type": "directory",
+      "title": "Output Directory",
+      "description": "Local directory where parsed results are saved (used for batch parsing or oversized content). Defaults to ~/mineru-downloads if not set.",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,111 @@
+# ============================================================
+#  School-Qbank — 根目录 .gitignore
+# ============================================================
+#  注意：frontend/.gitignore 是 Vite 标准模板（已存在），本文件补充
+#  根目录及后端 Python 项目（backend/）的忽略规则
+#  规则按类别分组，从上到下优先级递减
+# ============================================================
+
+# ====== Node 依赖与构建产物 ======
+# 根目录（src/public/node_modules 是早期项目的残留）
+node_modules/
+# 任意子目录的 node_modules（防御性，避免遗漏子项目）
+**/node_modules/
+# Vite/Webpack 构建产物
+**/dist/
+**/build/
+**/.next/
+**/.cache/
+**/.parcel-cache/
+# TypeScript 增量编译
+*.tsbuildinfo
+
+# ====== Python 依赖与缓存 ======
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+# 虚拟环境
+**/venv/
+**/.venv/
+**/env/
+# Poetry / PDM / uv 配置（pyproject.toml 本身保留）
+.python-version
+
+# ====== 日志与临时文件 ======
+**/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+celery_*.log
+*.pid
+
+# ====== 调试脚本（临时，不入版本控制） ======
+# 根目录早期调试/测试脚本（check_*/_check_*/debug_*/_test_*/diag_* 系列）
+check_*.py
+check_*.mjs
+check_*.cjs
+check_*.ps1
+_check_*.py
+_check_*.cjs
+_check_*.mjs
+debug_*.py
+debug_*.cjs
+debug_*.mjs
+_test_*.py
+_test_*.cjs
+_test_*.mjs
+test_*.py
+test_*.cjs
+test_*.mjs
+diag_*.py
+diag_*.ps1
+diag_*.cjs
+diag_*.mjs
+diag_*.js
+diag2.ps1
+# PowerShell 辅助脚本（check_pid/kill_8000/test_8000/wmic_8000/diag2/diag_8000）
+check_pid.ps1
+kill_8000.ps1
+test_8000.ps1
+wmic_8000.ps1
+diag_8000.ps1
+trim.ps1
+
+# ====== 调试输出文件 ======
+proof_debug.png
+proof2_output.txt
+proof3_output.txt
+debug.log
+_verify_output.log
+
+# ====== 环境变量与凭据（绝对不能上传） ======
+.env
+.env.local
+.env.*.local
+.envrc
+token.txt
+**/secrets.*
+
+# ====== 编辑器与系统文件 ======
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ====== 上传/同步临时目录 ======
+uploads_tmp/
+tmp/
+temp/
+.tmp/

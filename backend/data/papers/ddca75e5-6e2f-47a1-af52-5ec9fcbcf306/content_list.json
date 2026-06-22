@@ -1,0 +1,1406 @@
+[
+  {
+    "type": "text",
+    "text": "期末专项训练二 数的运算",
+    "text_level": 2,
+    "bbox": [
+      327,
+      73,
+      731,
+      100
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "测试时间:90 分钟 总分:100 分",
+    "bbox": [
+      391,
+      112,
+      628,
+      128
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "table",
+    "img_path": "images/e57d4e5011d7bc9fc6c5a248b998aa7c94cd97f1d6c43a197fe53aa4b17be9a2.jpg",
+    "table_caption": [],
+    "table_footnote": [],
+    "table_body": "<table><tr><td>题号</td><td>一</td><td>二</td><td>三</td><td>四</td><td>总分</td></tr><tr><td>得分</td><td></td><td></td><td></td><td></td><td></td></tr></table>",
+    "bbox": [
+      78,
+      134,
+      931,
+      197
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "一、细心读题，谨慎填写。（每空1分，共26分）",
+    "text_level": 2,
+    "bbox": [
+      78,
+      222,
+      519,
+      241
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "1. 算式 $68 \\times 0.53 + 68 \\times 0.47 = 68 \\times (0.53 + 0.47)$ 运用了乘法（）律。",
+    "bbox": [
+      110,
+      247,
+      746,
+      267
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "2. 根据 $28 \\times 23 = 644$ ，直接写出下面各题的得数。",
+    "bbox": [
+      110,
+      275,
+      541,
+      293
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n2 8 \\times 0. 2 3 = (\\quad) \\quad 0. 2 8 \\times 2. 3 = (\\quad) \\quad 6. 4 4 \\div 2 3 = (\\quad) \\quad 6 4 4 \\div 0. 2 8 = (\\quad)\n$$",
+    "text_format": "latex",
+    "bbox": [
+      134,
+      300,
+      922,
+      317
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "3. 在○里填上“＞”“＜”或“＝”。",
+    "bbox": [
+      112,
+      325,
+      413,
+      344
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\frac {3}{8} \\div \\frac {5}{3} \\bigcirc \\frac {3}{8}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      139,
+      352,
+      258,
+      388
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\frac {9}{6} \\times \\frac {8}{7} \\bigcirc \\frac {9}{6}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      332,
+      352,
+      445,
+      385
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\frac {2}{3} \\times 1 \\bigcirc \\frac {2}{3}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      519,
+      350,
+      623,
+      383
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "equation",
+    "text": "$$\n6 \\div 0. 1 5 \\bigcirc 6 \\times \\frac {4}{3}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      697,
+      347,
+      853,
+      380
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "4.(1)15的40%是( ),12是( )的80%。",
+    "bbox": [
+      115,
+      394,
+      527,
+      413
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "(2)16 kg 比( )kg 多 $\\frac{1}{7}$ ，比 30 kg 少 $\\frac{1}{3}$ 的是( )kg。",
+    "bbox": [
+      141,
+      419,
+      626,
+      451
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "5. 康康晨跑, $\\frac{1}{5}$ 时跑了 $\\frac{4}{3} \\mathrm{~km}$ 。他平均每时跑( )km, 平均每千米用( )时。",
+    "bbox": [
+      117,
+      463,
+      811,
+      495
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "6. 已知 $a \\div b = 13 \\cdots 5$ ，则 $100a \\div 100b = (\\quad) \\cdots (\\quad)$ 。",
+    "bbox": [
+      119,
+      501,
+      668,
+      522
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "7. 把 $12 \\div 7$ 的商用循环小数表示是( ), 小数点后面第 2011 位上的数字是( )。",
+    "bbox": [
+      119,
+      524,
+      894,
+      545
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "8. 心心在计算一个数除以 2.4 时, 粗心地算成一个数乘 2.4, 得到的结果是 144, 原题的正确结果是( )。",
+    "bbox": [
+      119,
+      547,
+      934,
+      595
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "9. 某演播厅共有 620 个观众席。康康学校五年级有 287 人, 六年级有 309 人, 估计一下, 两个年级的学生来看演出, ( ) (填“能”或“不能”) 坐下。我是这样估算的: \\_\\_\\_\\_。",
+    "bbox": [
+      119,
+      596,
+      934,
+      669
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "10. 欣欣商店新进了一批钥匙扣，“雪容融”钥匙扣是“冰墩墩”的 $\\frac{3}{4}$ 。如果“雪容融”钥匙扣有240个，“冰墩墩”钥匙扣有（ ）个。",
+    "bbox": [
+      124,
+      672,
+      934,
+      735
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "11. 李叔叔买了 5000 元国家债券, 定期两年, 年利率是 3.25%, 到期时他可得本金和利息共 ( )元。",
+    "bbox": [
+      124,
+      737,
+      936,
+      783
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "12. 一辆货车从甲地到乙地需要行驶6时,一辆客车从乙地到甲地需要行驶4时,如果两车同时从甲、乙两地出发,相向而行,( )时相遇。",
+    "bbox": [
+      124,
+      786,
+      934,
+      832
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "13.（2021·贺州）甲、乙两种衬衣的原价相同。换季时，甲种衬衣按五折销售，乙种衬衣按四折销售，王叔叔用180元购买这两种衬衣各一件。乙种衬衣原价每件（ ）元。",
+    "bbox": [
+      126,
+      836,
+      934,
+      880
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "aside_text",
+    "text": "准考证号",
+    "bbox": [
+      16,
+      173,
+      38,
+      229
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "aside_text",
+    "text": "姓名",
+    "bbox": [
+      20,
+      391,
+      42,
+      422
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "aside_text",
+    "text": "班级",
+    "bbox": [
+      23,
+      580,
+      45,
+      610
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "aside_text",
+    "text": "市县（区）",
+    "bbox": [
+      26,
+      770,
+      50,
+      832
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "aside_text",
+    "text": "绿花",
+    "bbox": [
+      20,
+      849,
+      45,
+      878
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "header",
+    "text": "1009\n绿卷\n用心做好卷",
+    "bbox": [
+      105,
+      52,
+      206,
+      112
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "aside_text",
+    "text": "线",
+    "bbox": [
+      57,
+      166,
+      73,
+      181
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "aside_text",
+    "text": "订",
+    "bbox": [
+      57,
+      308,
+      77,
+      323
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "aside_text",
+    "text": "装",
+    "bbox": [
+      60,
+      450,
+      80,
+      465
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "aside_text",
+    "text": "莉",
+    "bbox": [
+      63,
+      590,
+      85,
+      605
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "aside_text",
+    "text": "[Unreadable]",
+    "bbox": [
+      65,
+      726,
+      87,
+      742
+    ],
+    "page_idx": 0
+  },
+  {
+    "type": "text",
+    "text": "二、反复比较,正确选择。(将正确答案前的字母填在括号里)(每小题2分,共10分)",
+    "text_level": 2,
+    "bbox": [
+      55,
+      61,
+      828,
+      93
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "1. 下面( )图可以表示 $\\frac{3}{4}\\times\\frac{1}{2}$ 的意义。",
+    "bbox": [
+      89,
+      100,
+      442,
+      131
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "image",
+    "img_path": "images/2cca804c6e64fb5f3150ffd0a568bb83a25c6db5df8046f7fde6e2aaa52fa7ba.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "",
+    "bbox": [
+      112,
+      144,
+      277,
+      201
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "image",
+    "img_path": "images/59daf20ef1090bbfb6591e346d0d94f6d41eedec6ae9e9d30de88e97e9544e8d.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "",
+    "bbox": [
+      310,
+      144,
+      465,
+      201
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "image",
+    "img_path": "images/2c5989f74d50016c0382166d0161198617ed60e10a1ef9706417f09faa48ec7b.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "",
+    "bbox": [
+      500,
+      142,
+      601,
+      197
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "image",
+    "img_path": "images/98aa4fbe28e55bf0401737dc9e1153d39c821645b827ce0500fed7018bb9bf93.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "D.\n3/4\n1/2",
+    "sub_type": "text_image",
+    "bbox": [
+      638,
+      129,
+      848,
+      203
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "2. 把 $52 + 44 = 96, 1728 \\div 96 = 18, 50 - 18 = 32$ 列成综合算式，正确的是()。",
+    "bbox": [
+      85,
+      210,
+      759,
+      232
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "A. $1728 \\div (52 + 44) - 50$",
+    "bbox": [
+      112,
+      236,
+      326,
+      254
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "B. 50-1728÷(52+44)",
+    "bbox": [
+      500,
+      233,
+      704,
+      250
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "C. 50-1728÷52+44",
+    "bbox": [
+      112,
+      258,
+      304,
+      276
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "D. 50-1728÷44+52",
+    "bbox": [
+      500,
+      257,
+      687,
+      273
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "3. 学校举行广播体操表演, 每行有 12 人, 一共有 14 行。童童通过下面的竖式计算知道一共有 168 人参加表演。竖式中箭头所指的“12”可以用选项( )中的点阵图来表示。12",
+    "bbox": [
+      85,
+      274,
+      904,
+      321
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "image",
+    "img_path": "images/b3c132417b54942cfd938fc22bc53358f06e4b5377a494a30f3025881004d7c8.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "",
+    "bbox": [
+      112,
+      327,
+      228,
+      397
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "image",
+    "img_path": "images/96571c37bf4cd321ecf0dd30175d79d43f53bc4d50bb925612925bfedbc70524.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "",
+    "bbox": [
+      314,
+      328,
+      418,
+      395
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "image",
+    "img_path": "images/eeec0a41903ff32eca372724cde47e363d268ed922a3bc0a61f50f6c5eaf974e.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "",
+    "bbox": [
+      500,
+      324,
+      610,
+      393
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "image",
+    "img_path": "images/3a12baf4f5d71865ab37a991300141f4e00bc46edb2cac02d12e1197037ba907.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "",
+    "bbox": [
+      636,
+      321,
+      744,
+      391
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "image",
+    "img_path": "images/0a91b71b1f2cb841ca4671dc2ace1fd8e8fb756924cb603d9f3eb40641c9ff59.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "",
+    "bbox": [
+      800,
+      320,
+      870,
+      380
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "4. 已知 a, b, c 是三个大于 0 的数，并且 $a \\times \\frac{5}{3} = b \\div 25\\% = c \\times \\frac{3}{4}$ ，那么 a, b, c 中最小的数是（）。",
+    "bbox": [
+      85,
+      401,
+      902,
+      459
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "A. $a$",
+    "bbox": [
+      112,
+      465,
+      157,
+      480
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "B. b",
+    "bbox": [
+      314,
+      465,
+      349,
+      478
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "C. c",
+    "bbox": [
+      500,
+      461,
+      536,
+      476
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "D. 无法确定",
+    "bbox": [
+      635,
+      459,
+      742,
+      475
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "5. 爷爷从冷饮批发部购进了 5 箱冰淇淋来销售, 批发价为每箱 17 元, 每箱有 20 支。如果爷爷每支卖 1.5 元, 一共能赚多少钱? 下面列式正确的是()。",
+    "bbox": [
+      85,
+      480,
+      902,
+      524
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "A. $17 \\times 5$",
+    "bbox": [
+      112,
+      532,
+      198,
+      548
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "B. $1.5 \\times 20 \\times 5$",
+    "bbox": [
+      500,
+      528,
+      621,
+      542
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "C. $1.5 \\times 20 \\times 5 - 17 \\times 5$",
+    "bbox": [
+      112,
+      553,
+      317,
+      570
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "D. $17 \\times 5 - 20 \\times 5$",
+    "bbox": [
+      500,
+      549,
+      645,
+      564
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "三、注意审题，细心计算。（共41分）",
+    "text_level": 2,
+    "bbox": [
+      53,
+      573,
+      393,
+      597
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "1. 直接写得数。(8 分)",
+    "bbox": [
+      89,
+      599,
+      294,
+      618
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n4 5 + 3 6 =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      112,
+      623,
+      196,
+      640
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n8 1 0 - 3 5 0 =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      317,
+      619,
+      413,
+      633
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n1 5 \\times 5 0 =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      539,
+      618,
+      618,
+      631
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n4 2 0 \\div 3 0 =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      749,
+      617,
+      840,
+      630
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n1 0 - 0. 7 =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      112,
+      656,
+      201,
+      671
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n7. 3 \\div 0. 1 =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      317,
+      650,
+      406,
+      663
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\frac {7}{5} + \\frac {8}{5} =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      539,
+      640,
+      613,
+      671
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n3 - \\frac {3}{8} =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      749,
+      640,
+      818,
+      671
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\frac {2}{3} \\times \\frac {1}{2} =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      112,
+      687,
+      189,
+      720
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\frac {1}{4} \\div \\frac {1}{8} =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      317,
+      682,
+      388,
+      712
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n5. 6 3 + 4. 3 7 =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      539,
+      688,
+      652,
+      703
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n0. 2 5 \\times 0. 4 =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      749,
+      690,
+      853,
+      703
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n9 0 3 - 3 0 4 \\approx\n$$",
+    "text_format": "latex",
+    "bbox": [
+      112,
+      726,
+      216,
+      743
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n8 9 8 + 1 0 3 \\approx\n$$",
+    "text_format": "latex",
+    "bbox": [
+      315,
+      720,
+      413,
+      733
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n2 1 \\times 3 9 7 \\approx\n$$",
+    "text_format": "latex",
+    "bbox": [
+      539,
+      720,
+      630,
+      733
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n7 2 3 \\div 7 8 \\approx\n$$",
+    "text_format": "latex",
+    "bbox": [
+      749,
+      720,
+      842,
+      733
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "2. 用竖式计算。(带☆的要验算)(9分)",
+    "bbox": [
+      85,
+      744,
+      428,
+      767
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n3 6 2 4 - 8 2 5 =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      112,
+      771,
+      225,
+      788
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n1 0. 4 + 8. 7 4 =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      315,
+      766,
+      423,
+      779
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n5. 4 \\times 1. 0 3 =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      539,
+      766,
+      642,
+      779
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\star 1 2. 4 8 \\div 3. 2 =\n$$",
+    "text_format": "latex",
+    "bbox": [
+      749,
+      766,
+      884,
+      780
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "footer",
+    "text": "期末专项训练二 数的运算",
+    "bbox": [
+      655,
+      918,
+      853,
+      933
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "page_number",
+    "text": "17",
+    "bbox": [
+      862,
+      912,
+      895,
+      934
+    ],
+    "page_idx": 1
+  },
+  {
+    "type": "text",
+    "text": "3. 计算下列各题,能简算的要简算。(18 分)",
+    "bbox": [
+      100,
+      74,
+      494,
+      92
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "equation",
+    "text": "$$\n5 3 5 + 6 8 3 - 1 3 5\n$$",
+    "text_format": "latex",
+    "bbox": [
+      124,
+      99,
+      263,
+      116
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "equation",
+    "text": "$$\n2 1. 8 - 4. 7 - 5. 3\n$$",
+    "text_format": "latex",
+    "bbox": [
+      403,
+      98,
+      539,
+      114
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "equation",
+    "text": "$$\n1. 2 5 \\times 2. 5 \\times 3 2\n$$",
+    "text_format": "latex",
+    "bbox": [
+      682,
+      96,
+      811,
+      112
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "equation",
+    "text": "$$\n1 0 - \\frac {2}{7} \\div \\frac {9}{1 4} - \\frac {5}{9}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      129,
+      220,
+      270,
+      256
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "equation",
+    "text": "$$\n2. 8 3 \\times \\frac {3}{7} + 4. 1 7 \\div \\frac {7}{3}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      401,
+      220,
+      576,
+      255
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "equation",
+    "text": "$$\n2 0 2 2 \\times \\frac {2 0 2 0}{2 0 2 1}\n$$",
+    "text_format": "latex",
+    "bbox": [
+      675,
+      219,
+      786,
+      252
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "equation",
+    "text": "$$\n\\frac {5}{1 1} \\times \\left[ \\left(\\frac {2}{5} + \\frac {1}{3}\\right) \\div \\frac {5}{6} \\right]\n$$",
+    "text_format": "latex",
+    "bbox": [
+      129,
+      382,
+      307,
+      415
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "equation",
+    "text": "$$\n2 5 6 \\times 9 9 + 6\n$$",
+    "text_format": "latex",
+    "bbox": [
+      400,
+      391,
+      502,
+      407
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "equation",
+    "text": "$$\n7 8. 2 \\div [ (1. 2 5 + 0. 4 5) \\times 2 3 ]\n$$",
+    "text_format": "latex",
+    "bbox": [
+      670,
+      389,
+      910,
+      408
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "text",
+    "text": "4. 看图列式计算。(6 分)",
+    "bbox": [
+      104,
+      560,
+      326,
+      577
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "image",
+    "img_path": "images/da74b80751f489b972df7ed3a4fcbb5dd96fc1a53f60c7899ded91ae7250709e.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "(1) 修了36m\n?m",
+    "sub_type": "text_image",
+    "bbox": [
+      129,
+      583,
+      347,
+      630
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "image",
+    "img_path": "images/5414f03125576b96eb3f0bcaebaf74f395ecfbb92a8218c7d6a8bb7fc485a1cf.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "(2) 银杉树: 35棵 比银杉树多1/5}?棵\n银杏树:",
+    "sub_type": "text_image",
+    "bbox": [
+      519,
+      585,
+      852,
+      627
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "text",
+    "text": "四、走进生活，解决问题。（共23分）",
+    "text_level": 2,
+    "bbox": [
+      72,
+      745,
+      403,
+      763
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "text",
+    "text": "黄河流域生态保护和高质量发展座谈会",
+    "text_level": 2,
+    "bbox": [
+      334,
+      771,
+      678,
+      789
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "text",
+    "text": "习近平主席在郑州主持召开黄河流域生态保护和高质量发展座谈会并发表重要讲话。他强调，要坚持绿水青山就是金山银山的理念，坚持生态优先、绿色发展……让黄河成为造福人民的幸福河。",
+    "bbox": [
+      100,
+      793,
+      917,
+      853
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "text",
+    "text": "生态保护篇",
+    "text_level": 2,
+    "bbox": [
+      110,
+      862,
+      213,
+      878
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "image",
+    "img_path": "images/4ee253484fbfcc81018ea51fd3c2f39cd11695b74bac1279c3d2853bdaa81a70.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "",
+    "bbox": [
+      225,
+      862,
+      250,
+      880
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "text",
+    "text": "黄河生态系统是一个有机整体,我们要充分考虑周围的生态环境,积极植树造林,保护母亲河。",
+    "bbox": [
+      102,
+      888,
+      912,
+      923
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "page_number",
+    "text": "18",
+    "bbox": [
+      78,
+      935,
+      110,
+      954
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "footer",
+    "text": "绿卷 数学 BS版 六年级 下册",
+    "bbox": [
+      115,
+      937,
+      356,
+      959
+    ],
+    "page_idx": 2
+  },
+  {
+    "type": "text",
+    "text": "1. 已知甲队 3 月上旬植树 350 棵, 3 月中旬植树棵数比上旬多 $20\\%$ , 比下旬少 $\\frac{1}{3}$ , 那么甲队 3 月一共植树多少棵? (先用线段图表示上旬、中旬植树棵数的数量关系, 再解答) (6 分)",
+    "bbox": [
+      53,
+      65,
+      897,
+      128
+    ],
+    "page_idx": 3
+  },
+  {
+    "type": "text",
+    "text": "2. 为了改善黄河流域两边的生态环境, 避免水土流失, 乙队计划每天植树 80 棵, 则比原计划预定时间提前 6 天植完; 如果每天植树 50 棵, 则会比原计划预定时间推迟 3 天植完, 总共要植树多少棵? (6 分)",
+    "bbox": [
+      53,
+      219,
+      904,
+      285
+    ],
+    "page_idx": 3
+  },
+  {
+    "type": "image",
+    "img_path": "images/076b8a6fdb1849425e91fa4efc9d02ee2c9583dd8f73ca274127cbb9c2f0e0c6.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "Aerial view of a winding river cutting through dense forested terrain (no visible text or symbols)",
+    "sub_type": "natural_image",
+    "bbox": [
+      670,
+      293,
+      882,
+      381
+    ],
+    "page_idx": 3
+  },
+  {
+    "type": "text",
+    "text": "节约用水篇",
+    "text_level": 2,
+    "bbox": [
+      70,
+      439,
+      176,
+      457
+    ],
+    "page_idx": 3
+  },
+  {
+    "type": "text",
+    "text": "↓",
+    "text_level": 2,
+    "bbox": [
+      188,
+      439,
+      215,
+      457
+    ],
+    "page_idx": 3
+  },
+  {
+    "type": "text",
+    "text": "黄河的水资源量是有限的,搞生态建设要用水,发展经济、吃饭过日子也离不开水,不能把水当作无限供给的资源。为了节约用水,自来水厂规定:每人每月用水不超过3吨的,按每吨3.5元收费,超过3吨的部分按每吨4元收费。",
+    "bbox": [
+      63,
+      460,
+      907,
+      527
+    ],
+    "page_idx": 3
+  },
+  {
+    "type": "text",
+    "text": "3. 康康家除了康康还有爷爷、奶奶、爸爸、妈妈，他们家5月份共用水18吨，照这样计算，他们应交水费多少元？（5分）",
+    "bbox": [
+      63,
+      528,
+      907,
+      576
+    ],
+    "page_idx": 3
+  },
+  {
+    "type": "text",
+    "text": "黄河游玩篇",
+    "text_level": 2,
+    "bbox": [
+      72,
+      703,
+      179,
+      720
+    ],
+    "page_idx": 3
+  },
+  {
+    "type": "text",
+    "text": "↓",
+    "text_level": 2,
+    "bbox": [
+      194,
+      703,
+      218,
+      720
+    ],
+    "page_idx": 3
+  },
+  {
+    "type": "text",
+    "text": "郑州的黄河风景名胜区处于中华民族发源地的核心部位,景区历史古迹丰富,文化遗产深厚。景区每年接待上百万中外游客,被誉为万里黄河上的一颗璀璨的明珠。",
+    "bbox": [
+      70,
+      718,
+      915,
+      767
+    ],
+    "page_idx": 3
+  },
+  {
+    "type": "text",
+    "text": "4. 家在徐州的张老师计划和朋友相约前往郑州黄河风景名胜区游玩。张老师开车从徐州出发，已经行驶了全程的 $\\frac{3}{10}$ ，再行驶 $74 \\mathrm{~km}$ 就到路程的一半，此时张老师距离郑州还有多远？（6分）",
+    "bbox": [
+      70,
+      766,
+      915,
+      830
+    ],
+    "page_idx": 3
+  },
+  {
+    "type": "image",
+    "img_path": "images/a3b2bb6027de61533e08ed40fef2cc96afdcf51c88a115c0cdf58fb90e9224b7.jpg",
+    "image_caption": [],
+    "image_footnote": [],
+    "content": "Black-and-white landscape photo showing a rocky outcrop with sparse vegetation and distant hills (no visible text or symbols)",
+    "sub_type": "natural_image",
+    "bbox": [
+      685,
+      833,
+      897,
+      946
+    ],
+    "page_idx": 3
+  }
+]

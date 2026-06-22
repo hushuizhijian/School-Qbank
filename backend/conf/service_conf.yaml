@@ -1,0 +1,30 @@
+# 服务配置文件
+# 功能：定义后端服务的运行参数
+# 使用场景：Celery Worker、uvicorn 等服务的启动配置
+
+server:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+
+celery:
+  broker_url: "redis://localhost:6379/0"
+  result_backend: "redis://localhost:6379/0"
+  task_serializer: "json"
+  result_serializer: "json"
+  timezone: "Asia/Shanghai"
+  task_track_started: true
+  task_time_limit: 600
+  task_soft_time_limit: 300
+
+mineru:
+  default_timeout: 300
+  default_model: "vlm"
+  max_retries: 3
+  retry_delay: 5
+
+pipeline:
+  stop_on_error: true
+  max_retries: 3
+  ocr_enabled: false
+  vlm_enabled: false
