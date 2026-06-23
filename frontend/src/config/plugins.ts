@@ -12,6 +12,15 @@ import type { PluginRegistration } from "@/types/plugin"
 export const WORKBENCH_PLUGINS: PluginRegistration[] = [
   {
     meta: {
+      id: "analysis-editor",
+      mountPoint: "analysis-editor",
+      priority: 10,
+      label: "解析内容编辑",
+    },
+    loader: () => import("@/components/plugins/wrappers/AnalysisEditorWrapper"),
+  },
+  {
+    meta: {
       id: "ai-auto-difficulty",
       mountPoint: "attribute-panel",
       priority: 10,
@@ -27,6 +36,15 @@ export const WORKBENCH_PLUGINS: PluginRegistration[] = [
       label: "AI 知识点匹配",
     },
     loader: () => import("@/components/plugins/wrappers/AiMatchKnowledgeWrapper"),
+  },
+  {
+    meta: {
+      id: "ai-generate-knowledge",
+      mountPoint: "editor-bottom",
+      priority: 5,
+      label: "AI 生成知识点",
+    },
+    loader: () => import("@/components/plugins/wrappers/AiGenerateKnowledgeWrapper"),
   },
   {
     meta: {
@@ -75,11 +93,29 @@ export const WORKBENCH_PLUGINS: PluginRegistration[] = [
   },
   {
     meta: {
+      id: "image-manager",
+      mountPoint: "image-manager",
+      priority: 5,
+      label: "题图管理",
+    },
+    loader: () => import("@/components/plugins/wrappers/ImageManagerWrapper"),
+  },
+  {
+    meta: {
       id: "quality-checker",
       mountPoint: "toolbar",
       priority: 20,
       label: "质量检查",
     },
     loader: () => import("@/components/plugins/wrappers/QualityCheckerWrapper"),
+  },
+  {
+    meta: {
+      id: "word-editor",
+      mountPoint: "title-right",
+      priority: 10,
+      label: "Word 编辑",
+    },
+    loader: () => import("@/components/plugins/wrappers/WordEditorWrapper"),
   },
 ]

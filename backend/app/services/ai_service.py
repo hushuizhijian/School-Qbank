@@ -24,6 +24,107 @@ from app.services import knowledge_service
 from app.services.system_setting_service import MODEL_TYPE_TO_KEY, parse_model_value
 
 
+# ========== 解析 Prompt 模板（按题型分发） ==========
+
+# 通用解析 prompt（默认走这条）
+_GENERAL_ANALYSIS_PROMPT = """你是一名小学数学老师，请为以下题目生成解析，严格按三段固定格式输出（整段不超过 150 字）：
+
+**解题思路：**
+（1 段，不超过 3 句话。点明本题考查的知识点 + 解题核心方法。）
+
+**解题步骤：**
+（编号列表，3~5 步。每步一行；最后一步必须包含验算。）
+
+**参考答案：**
+（仅一行最终结果，格式：数字 + 单位。若无单位写"无"。）
+
+规则：
+1. 题目为纯数字读法 / 写法题时，忽略题干中虚构的情境描述（如"世界上最大的洋"），只处理数字本身。
+2. 中文大写数字必须用阿拉伯数字 + 单位写出，禁止汉字堆砌。
+3. 验算固定格式："验算：将 X 写成 Y 形式，无误。" 或 "验算：按 Y 反向读出 Z，与原数一致。"
+4. 禁止出现"小贴士""思维导图""举一反三"等无关内容。
+5. 数学公式用 LaTeX 格式（如 $a^2+b^2=c^2$）。
+
+题目：{stem}
+已知答案：{answer}
+"""
+
+# 计算题专用 prompt（question_type == "calculation" 时触发）
+# ponytail: 仅在 calculation 题型下替换；通用规则不适用——递等式是计算题标准格式
+_CALCULATION_ANALYSIS_PROMPT = """你是一名小学数学老师，请为以下计算题生成解析，严格按下方格式输出（整段不超过 400 字）：
+
+**解题步骤：**
+（按原式运算顺序，把计算过程拆成 3~5 行。**每个步骤占一行**——同一行内用 `=` 链连接各次变换（向右写），不同步骤之间用空行分隔。最后一步的最终答案用 Markdown 加粗（数字两侧加 `**`）。
+
+**严禁**：
+1. 整行算式用 `$$...$$` 块级 LaTeX 包裹（块级公式内部 `=` 自动居中换行，无法链式书写）
+2. 每行只写一个 `=`、把递等式拉成多行
+3. "第一步/第二步"等列表编号
+4. "解题思路""方法总结""验算""小贴士"等段落
+
+格式样例（行内 `=` 链，不用 `$$` 块）：
+**解题步骤：**
+8/9 × 2/5 ÷ 24 + 7 × 0.6 - 3/5 = 8/9 × 2/5 × 1/24 + 2/5 × 15/8 = 2×15 / (9×5) = 30/45 = 2/3
+
+3/5 × 24 + 7 × 0.6 - 3/5 = 3/5(24-1) + 4.2 = 3/5 × 23 + 4.2 = 13.8 + 4.2 = **18**
+
+9.83 - (4.93 + 2¼) = 9.83 - (4.93 + 2.25) = 9.83 - 7.18 = **2.65**
+
+24 ÷ (9/10 - 3/40) × 4/15 = 24 ÷ 1/24 × 4/15 = 24 × 24 × 4/15 = 24 × 24/15 = **57**
+
+简便计算规则（必须先用）：
+1. 拿到算式后**先观察**：是否含乘法分配律（a×b ± a×c）、提取公因数（ab + ac）、凑整（99 / 9.9 / 1.01 / 0.99）、结合律、拆分（99×a = 100a - a，102×a = 100a + 2a）？
+2. **存在简便方法的必须先用**，把它写在 `=` 链的变换过程中。
+3. 简便方法与标准方法并存时，**优先简便方法**。
+4. 无简便方法时按标准运算顺序（先括号 → 再乘除 → 最后加减）逐步化简。
+
+其他规则：
+1. 中文大写数字（如"二又四分之一"）必须先转化为阿拉伯数字 / 分数再代入。
+2. 数学公式用**行内** LaTeX（如 `$\\frac{{8}}{{9}}$`），**严禁** `$$...$$` 块级。
+3. 递等式要写完所有步骤，不可中途截断或省略中间变换。
+
+题目：{stem}
+已知答案：{answer}
+"""
+
+
+def build_analysis_prompt(stem: str, answer: str, question_type: str = "general") -> str:
+    """构建解析生成 prompt — 按题型分发模板
+
+    功能：根据题目类型选择不同的 prompt 模板
+    输入参数：
+      - stem: 题干
+      - answer: 已知答案
+      - question_type: 题型（general / choice / fill / calculation / application）
+    返回值：完整的 prompt 字符串
+    使用场景：generate_analysis / generate_analysis_text 共用
+    """
+    answer_text = answer if answer else "（无）"
+    # 计算题走专用模板，其他题型走通用模板
+    if question_type == "calculation":
+        return _CALCULATION_ANALYSIS_PROMPT.format(stem=stem, answer=answer_text)
+    return _GENERAL_ANALYSIS_PROMPT.format(stem=stem, answer=answer_text)
+
+
+def _looks_like_calculation(stem: str) -> bool:
+    """启发式判断题干是否为计算题
+
+    功能：在没有 Question 对象（如异步任务）时，从题干文本中检测计算题特征
+    输入参数：stem — 题干文本
+    返回值：True=计算题，False=其他
+    使用场景：generate_analysis_text 异步任务入口
+    """
+    import re
+    # 计算题特征：含多个运算符 + 数字（≥3 个数字 / ≥2 个运算符）
+    # 排除：纯单位换算（如"1米=（）厘米"）和百分数 / 分数定义题
+    operator_pattern = re.compile(r'[+\-×÷\*\/=]')
+    digit_pattern = re.compile(r'\d')
+    operator_count = len(operator_pattern.findall(stem))
+    digit_count = len(digit_pattern.findall(stem))
+    # 算式密集型判定：≥3 个数字 + ≥2 个运算符 → 计算题
+    return digit_count >= 3 and operator_count >= 2
+
+
 class AIService:
     """AI 操作服务类
 
@@ -435,21 +536,12 @@ class AIService:
         stem = q.stem or ""
 
         try:
-            # 使用 prompt 直接控制输出格式，生成"精简"解析
-            answer = q.answer or ""
-            analysis_prompt = f"""你是一名小学数学老师，请为以下题目生成一段精简的解题解析（150-300字）。
-
-要求：
-1. 先写明解题思路（1-2 句）
-2. 列出关键步骤（2-4 步，每步一行）
-3. 必要时给出最终答案
-4. 语言简洁，避免冗余描述
-5. 使用中文输出，数学公式用 LaTeX 格式（如 $a^2+b^2=c^2$）
-
-题目：{stem}
-已知答案：{answer if answer else "（无）"}
-
-精简解析："""
+            # 按题型分发 prompt：计算题走递等式专用模板，其他走通用模板
+            analysis_prompt = build_analysis_prompt(
+                stem=stem,
+                answer=q.answer or "",
+                question_type=q.question_type or "general",
+            )
             analysis = await provider.chat(
                 "你是一名小学数学老师，擅长用简洁的语言讲解解题思路。",
                 analysis_prompt,
@@ -596,19 +688,13 @@ class AIService:
             provider = await self._get_provider()
         except HTTPException:
             return ""
-        prompt = f"""你是一名小学数学老师，请为以下题目生成一段精简的解题解析（150-300字）。
-
-要求：
-1. 先写明解题思路（1-2 句）
-2. 列出关键步骤（2-4 步，每步一行）
-3. 必要时给出最终答案
-4. 语言简洁，避免冗余描述
-5. 使用中文输出，数学公式用 LaTeX 格式（如 $a^2+b^2=c^2$）
-
-题目：{stem or ""}
-已知答案：{answer or "（无）"}
-
-精简解析："""
+        # 异步任务没有 question 对象，按题干启发式判断题型：含大量算式/运算是计算题
+        question_type = "calculation" if _looks_like_calculation(stem or "") else "general"
+        prompt = build_analysis_prompt(
+            stem=stem or "",
+            answer=answer or "",
+            question_type=question_type,
+        )
         try:
             result = await provider.chat(
                 "你是一名小学数学老师，擅长用简洁的语言讲解解题思路。",

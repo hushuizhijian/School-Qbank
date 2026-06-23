@@ -1,7 +1,8 @@
 /**
  * 属性编辑面板组件
  *
- * 功能：校对工作台中栏的属性编辑面板，支持编辑题型、难度(AI/用户双框 0.1~1.0)、分值、知识点(搜索+AI智能创建)、题图管理、AI操作等
+ * 功能：校对工作台中栏的属性编辑面板，支持编辑题型、难度(AI/用户双框 0.1~1.0)、分值、知识点(搜索+AI智能创建)、AI操作等
+ * 注：题图管理已剥离为 image-manager 插件，由 ProofreadingWorkbench 通过 PluginSlot 渲染
  * 输入参数：
  *   - question: Question | null — 当前题目
  *   - onUpdateField: (field: string, value: unknown) => void — 更新字段回调
@@ -17,13 +18,11 @@
  * 使用场景：校对工作台中栏，选中题目后展示属性编辑区
  */
 
-import { useState, useMemo } from "react"
+import { useState } from "react"
 import { cn } from "@/utils/cn"
 import { QUESTION_TYPE_MAP } from "@/utils/constants"
 import type { Question, KnowledgePointItem } from "@/types/question"
 import KnowledgePointPicker, { type AiSelection } from "@/components/knowledge/KnowledgePointPicker"
-import ImageManagerPanel from "@/components/question/ImageManagerPanel"
-import type { QuestionImage } from "@/components/question/ImageManagerPanel"
 import { Database, Trash2, ClipboardList } from "lucide-react"
 
 /* ========== 类型定义 ========== */
@@ -79,49 +78,6 @@ const getScoreColors = (score: number | null | undefined) => {
   if (s <= 0.7) return { bar: "bg-yellow-500", text: "text-yellow-700" }
   if (s <= 0.9) return { bar: "bg-orange-500", text: "text-orange-700" }
   return { bar: "bg-red-500", text: "text-red-700" }
-}
-
-/**
- * 题目 images 字段转换为 QuestionImage[]
- * 功能：将 Question.images 转为 ImageManagerPanel 所需格式
- *       兼容两种后端格式：
- *       - string[]: 纯URL字符串数组
- *       - {path, type}[]: 对象格式（后端 _extract_question_images 产出）
- * 输入参数：images — 图片数据（字符串数组或对象数组）
- * 返回值：QuestionImage 数组
- */
-const toQuestionImages = (images: unknown[]): QuestionImage[] => {
-  if (!images || !Array.isArray(images)) return []
-  return images.reduce<QuestionImage[]>((acc, item, index) => {
-    if (typeof item === "string") {
-      acc.push({
-        id: `img_${index}_${item.slice(-8)}`,
-        url: item,
-        sort_order: index,
-      })
-    } else if (item && typeof item === "object") {
-      const obj = item as Record<string, unknown>
-      const url = String(obj.path || obj.url || "")
-      if (url) {
-        acc.push({
-          id: `img_${index}_${url.slice(-8)}`,
-          url,
-          sort_order: index,
-        })
-      }
-    }
-    return acc
-  }, [])
-}
-
-/**
- * QuestionImage[] 转换回 string[]
- * 功能：将 ImageManagerPanel 输出的图片列表转回 URL 字符串数组
- * 输入参数：questionImages — QuestionImage 数组
- * 返回值：URL 字符串数组
- */
-const toStringImages = (questionImages: QuestionImage[]): string[] => {
-  return questionImages.map((img) => img.url)                          // 提取URL
 }
 
 /* ========== 子组件：难度输入框（AI/用户 双框） ========== */
@@ -241,7 +197,8 @@ function DifficultyInputRow({
  * 属性编辑面板
  *
  * 功能：展示和编辑当前选中题目的属性信息
- * 布局：题号+状态 → 题型 → 难度(AI/用户双框) → 知识点(搜索+标签) → 题图管理 → AI操作按钮
+ * 布局：题号+状态 → 题型 → 难度(AI/用户双框) → 知识点(搜索+标签) → AI操作按钮
+ * 题图管理已剥离为 image-manager 插件，由 ProofreadingWorkbench 渲染
  */
 export default function AttributePanel({
   question,
@@ -254,13 +211,6 @@ export default function AttributePanel({
   paperSubject,
   aiSelection,
 }: AttributePanelProps) {
-  /* ========== 题图列表转换 ========== */
-
-  const questionImages = useMemo(
-    () => question ? toQuestionImages(question.images) : [], // string[] → QuestionImage[]
-    [question]
-  )
-
   /* ========== 无题目时显示占位 ========== */
 
   if (!question) {
@@ -279,22 +229,16 @@ export default function AttributePanel({
     .filter((kp): kp is NonNullable<typeof kp> => kp != null)
     .filter((kp) => typeof (kp as { id?: string }).id === "string" && (kp as { id: string }).id.length > 0)
 
-  /* ========== 题图变更处理 ========== */
-
-  const handleImagesChange = (newImages: QuestionImage[]) => {
-    onUpdateField("images", toStringImages(newImages)) // QuestionImage[] → string[]
-  }
-
   /* ========== 渲染 ========== */
 
   return (
-    <div className="flex flex-col h-full overflow-y-auto">
+    <div className="flex flex-col">
       {/* 标题栏 */}
       <div className="px-4 py-3 border-b border-slate-200 bg-slate-50">
         <h3 className="text-sm font-semibold text-slate-700">属性编辑</h3>
       </div>
 
-      <div className="flex-1 px-4 py-3 space-y-4">
+      <div className="px-4 py-3 space-y-4">
         {/* 题号 + 入库状态 */}
         <div className="flex items-center justify-between">
           <span className="text-sm font-medium text-slate-700">
@@ -353,16 +297,6 @@ export default function AttributePanel({
             </div>
           )}
         </div>
-
-        {/* 题图管理面板 */}
-        {question && (
-          <ImageManagerPanel
-            questionId={question.id}
-            images={questionImages}
-            onImagesChange={handleImagesChange}                          // 题图变更
-            layoutMode="auto"
-          />
-        )}
       </div>
 
       {/* 底部AI操作按钮区 — 3行2列布局 */}

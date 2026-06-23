@@ -51,6 +51,9 @@ export interface Question {
   has_table: boolean
   has_warning: boolean
 
+  // Word 编辑器保存内容：{ html: string, images: [...] }，见 WordEditor
+  word_content: { html: string; images: unknown[] } | null
+
   // 知识点（中文展示）
   knowledge_points: KnowledgePointItem[]
 
@@ -96,4 +99,5 @@ export interface QuestionUpdateRequest {
   has_table?: boolean
   question_no?: number
   latex_source?: string | null
+  word_content?: unknown  // Word 编辑内容：{ html, images }
 }

@@ -64,12 +64,64 @@ const GRID_BG_STYLE: React.CSSProperties = {
  * 功能：将 File 对象通过 FormData 上传，返回图片 URL
  * 输入参数：file — 待上传的图片文件
  * 返回值：图片在服务器上的 URL 字符串
+ * 修复点：
+ *   1. 原调用 /api/upload/image（后端未注册该子路径 → 404 Not Found）
+ *      改为 /api/upload 并通过 category=image 分类存储
+ *   2. 显式声明 Content-Type=multipart/form-data；否则 axios 默认
+ *      Content-Type=application/json，FormData 会被序列化成 JSON 字符串，
+ *      后端拿不到 file 字段 → body.file: Field required
  */
 const uploadImage = async (file: File): Promise<string> => {
   const formData = new FormData() // 构建 FormData
   formData.append("file", file) // 添加文件字段
-  const res = await client.post("/api/upload/image", formData) // 发送上传请求
+  formData.append("category", "image") // 图片分类
+  const res = await client.post("/api/upload", formData, {
+    headers: { "Content-Type": "multipart/form-data" }, // 覆盖默认 JSON 头
+  })
   return res.data.url // 返回图片地址
+}
+
+/**
+ * 题目 images 字段 → QuestionImage[]
+ * 功能：将 Question.images 转为本组件所需格式
+ *       兼容两种后端格式：
+ *       - string[]: 纯 URL 字符串数组
+ *       - {path, type}[]: 对象格式（后端 _extract_question_images 产出）
+ * 输入参数：images — 图片数据（字符串数组或对象数组）
+ * 返回值：QuestionImage 数组
+ */
+export const toQuestionImages = (images: unknown[]): QuestionImage[] => {
+  if (!images || !Array.isArray(images)) return [] // 空值/非数组兜底
+  return images.reduce<QuestionImage[]>((acc, item, index) => {
+    if (typeof item === "string") {
+      acc.push({
+        id: `img_${index}_${item.slice(-8)}`, // 末 8 位做稳定 id
+        url: item, // URL 原样使用
+        sort_order: index, // 排序号
+      })
+    } else if (item && typeof item === "object") {
+      const obj = item as Record<string, unknown> // 对象格式
+      const url = String(obj.path || obj.url || "") // 优先取 path，其次 url
+      if (url) {
+        acc.push({
+          id: `img_${index}_${url.slice(-8)}`,
+          url,
+          sort_order: index,
+        })
+      }
+    }
+    return acc
+  }, [])
+}
+
+/**
+ * QuestionImage[] → string[]
+ * 功能：将本组件输出转回 URL 字符串数组（与后端 images 字段一致）
+ * 输入参数：questionImages — QuestionImage 数组
+ * 返回值：URL 字符串数组
+ */
+export const toStringImages = (questionImages: QuestionImage[]): string[] => {
+  return questionImages.map((img) => img.url) // 提取 URL
 }
 
 /**

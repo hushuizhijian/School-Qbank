@@ -42,6 +42,8 @@ interface DualPaneEditorProps {
   title: string
   /** 标题栏右侧附加内容（与标题同行展示，如分行/分列控件） */
   titleExtra?: React.ReactNode
+  /** 标题栏最右侧操作区（如 word编辑 按钮等独立插件） */
+  titleRight?: React.ReactNode
   /** 编辑器高度，默认 '400px' */
   height?: string
   /** 低置信度范围，用于黄色高亮 */
@@ -69,6 +71,7 @@ export default function DualPaneEditor({
   onChange,
   title,
   titleExtra,
+  titleRight,
   height = "400px",
   lowConfidenceRanges,
   readOnly = false,
@@ -149,7 +152,7 @@ export default function DualPaneEditor({
       )}
       style={{ height }} // 动态高度
     >
-      {/* 标题栏：左侧标题 + 附加内容 */}
+      {/* 标题栏：左侧标题 + 附加内容 + 最右侧操作区 */}
       <div className="h-10 border-b flex items-center px-3 shrink-0 bg-slate-50 gap-3">
         {/* 左侧标题 */}
         <span className="text-sm font-medium text-slate-700 shrink-0">{title}</span>
@@ -162,6 +165,13 @@ export default function DualPaneEditor({
         )}
         {/* 防止 titleExtra 为空时塌陷 */}
         {!titleExtra && <div className="flex-1" />}
+
+        {/* 标题栏最右侧操作区（如 word编辑 等独立插件） */}
+        {titleRight && (
+          <div className="flex items-center gap-1 shrink-0">
+            {titleRight}
+          </div>
+        )}
       </div>
 
       {/* 主内容区：左侧编辑器 + 可拖拽分隔条 + 右侧预览 */}

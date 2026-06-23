@@ -84,6 +84,8 @@ class Question(Base):
     has_formula: Mapped[bool] = mapped_column(Boolean, default=False)
     # 是否含表格
     has_table: Mapped[bool] = mapped_column(Boolean, default=False)
+    # Word 编辑器保存内容：JSON（{ html: string, images: [{id,url,x,y,w,h,srcW,srcH,srcX,srcY}] }）
+    word_content: Mapped[dict | None] = mapped_column(JSON, nullable=True, default=None)
 
     # 关联关系：所属试卷
     paper = relationship("Paper", back_populates="questions")

@@ -41,7 +41,8 @@ async def update_question(
                "images", "tikz_code", "figure_type", "boundary",
                "analysis", "score", "source_paper_name", "source_year",
                "source_region", "has_figure", "has_formula", "has_table",
-               "image_layout_mode", "has_warning", "latex_source"}
+               "image_layout_mode", "has_warning", "latex_source",
+               "word_content"}
     updates = {k: v for k, v in data.items() if k in allowed and v is not None}
 
     # 打印接收到的 keys（排查数据同步问题：分题保存/校对工作台更新是否被过滤）

@@ -27,7 +27,7 @@ export default function AnalysisEditor({ value, onChange }: AnalysisEditorProps)
     <div className="bg-white rounded-lg border border-slate-200 overflow-hidden flex flex-col">
       {/* 标题栏 */}
       <div className="px-4 py-2 bg-slate-50 border-b border-slate-200 shrink-0">
-        <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">详细解析</span>
+        <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">解析内容</span>
       </div>
 
       {/* 编辑区 + 预览区 水平分割 */}

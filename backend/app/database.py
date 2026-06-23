@@ -288,6 +288,16 @@ async def init_db():
         except Exception:
             pass
 
+        # questions 表添加 word_content 字段（V2新增，Word 富文本 JSON）
+        try:
+            await conn.execute(
+                __import__("sqlalchemy").text(
+                    "ALTER TABLE questions ADD COLUMN word_content TEXT DEFAULT NULL"
+                )
+            )
+        except Exception:
+            pass
+
     # 自动导入预设知识点
     # 三种情况处理：
     #   1) 表为空（count == 0）→ 首次启动，导入预设

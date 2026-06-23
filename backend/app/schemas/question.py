@@ -73,6 +73,7 @@ class QuestionResponse(BaseModel):
     has_figure: bool = False  # 是否含图
     has_formula: bool = False  # 是否含公式
     has_table: bool = False  # 是否含表格
+    word_content: dict | None = None  # Word 编辑器保存内容（HTML + 图片定位）
 
     model_config = {"from_attributes": True}  # 支持从ORM对象转换
 

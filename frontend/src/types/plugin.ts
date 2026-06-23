@@ -16,8 +16,11 @@ export type PluginMountPoint =
   | "editor-bottom"     // 右栏双栏编辑器下方
   | "editor-side"       // 右栏双栏编辑器侧边
   | "toolbar"           // 底部 BatchActionBar 右侧
+  | "analysis-editor"   // 右栏解析内容区（替代原内置 DualPaneEditor）
+  | "image-manager"     // 中栏题图管理（原内置 ImageManagerPanel）
   | "left-panel"        // 左栏额外区域（预留）
   | "modal"             // 全局弹窗形态（预留）
+  | "title-right"       // 双栏编辑器标题栏右侧（如 word编辑）
 
 /* ========== 插件元数据 ========== */
 

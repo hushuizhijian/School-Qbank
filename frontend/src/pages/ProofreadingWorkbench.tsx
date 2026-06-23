@@ -702,6 +702,14 @@ export default function ProofreadingWorkbench() {
             paperSubject={paperMeta?.subject}                              // 试卷学科（用于 AI 智能创建）
             aiSelection={aiSelectionCamel}                                  // AI 供应商/模型（驼峰版给 Picker）
           />
+          {/* 插件槽：题图管理（原内置 ImageManagerPanel 剥离） */}
+          <div className="border-t border-slate-200 p-3">
+            <PluginSlot
+              mountPoint="image-manager"
+              pluginProps={pluginProps}
+              plugins={WORKBENCH_PLUGINS}
+            />
+          </div>
           {/* AI 批量补全进行中提示 */}
           {autoAiFilling && (
             <div className="px-4 py-2 text-xs text-blue-600 bg-blue-50 border-t border-blue-100 flex items-center gap-1.5">
@@ -794,18 +802,23 @@ export default function ProofreadingWorkbench() {
                         questionType={currentQuestion.question_type}
                       />
                     ) : undefined}
+                    titleRight={
+                      // 标题栏最右侧插件槽：word编辑 等
+                      <PluginSlot
+                        mountPoint="title-right"
+                        pluginProps={pluginProps}
+                        plugins={WORKBENCH_PLUGINS}
+                      />
+                    }
                   />
                 )
               })()}
 
-              {/* 解析内容 DualPaneEditor */}
-              <DualPaneEditor
-                value={currentQuestion.analysis || ""}
-                onChange={(val) => handleUpdateField("analysis", val)}
-                title="解析内容"
-                height="45%"
-                images={normalizeImages(currentQuestion?.images || [])}
-                imagePosition="end"
+              {/* 解析内容编辑（已剥离为插件，挂载点 analysis-editor） */}
+              <PluginSlot
+                mountPoint="analysis-editor"
+                pluginProps={pluginProps}
+                plugins={WORKBENCH_PLUGINS}
               />
             </div>
           ) : (

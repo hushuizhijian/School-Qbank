@@ -69,6 +69,7 @@ import type { Homework, HomeworkQuestionItem, HomeworkPageConfig } from "@/types
 import { exportCanvasToPdf } from "@/utils/pdfExport"
 import client from "@/api/client"
 import PreviewRenderer from "@/components/question/PreviewRenderer"
+import WordContentView from "@/components/question/WordContentView"
 import SmartQuestionImage from "@/components/common/SmartQuestionImage"
 import PaperPreview from "@/components/compose/PaperPreview"
 import PaginationPreview from "@/components/compose/PaginationPreview"
@@ -696,51 +697,65 @@ function SortableCanvasItem({
         </div>
         {/* 主体：题干 + 选项 + 图片
             需求（PDF 1:1 还原）：画布字号 = 配置值 / scale，
-            与后端字号 = 配置值 × 0.75 / scale 等效（推导见 PaperPreview.tsx） */}
+            与后端字号 = 配置值 × 0.75 / scale 等效（推导见 PaperPreview.tsx）
+            需求（Word 版式）：若题目保存了 word_content，则用 WordContentView 渲染 A4 版式 */}
         <div
-          className="flex-1 min-w-0 prose prose-sm max-w-none text-slate-800 leading-relaxed [&_.katex-display]:my-1 [&_p]:my-1 [&_p:first-child]:mt-0 [&_p:last-child]:mb-0 [&_img]:max-w-full"
+          className="flex-1 min-w-0 text-slate-800 leading-relaxed"
           style={{ fontSize: `${fontSize / scale}px` }}
         >
-          <PreviewRenderer content={question.stem || ""} />
-          {question.options && Array.isArray(question.options) && question.options.length > 0 && (
-            <div className="mt-1.5 grid grid-cols-2 gap-x-3 gap-y-0.5 not-prose">
-              {((question.options as unknown[]) || []).map((opt, idx) => {
-                let label = String.fromCharCode(65 + idx)
-                let content = ""
-                if (typeof opt === "string") {
-                  content = opt
-                } else if (opt && typeof opt === "object") {
-                  const obj = opt as Record<string, unknown>
-                  if (obj.label) label = String(obj.label)
-                  content = String(obj.content || obj.text || "")
-                }
-                return (
-                  <div key={idx} className="flex items-start gap-1 min-w-0">
-                    <span className="font-medium text-slate-500 shrink-0">{label}.</span>
-                    <span className="flex-1 min-w-0 break-words">{content}</span>
-                  </div>
-                )
-              })}
-            </div>
-          )}
-          {/* 配图（缩略） */}
-          {question.images && question.images.length > 0 && (
-            <div className="mt-1.5 grid grid-cols-2 gap-1.5 not-prose">
-              {(question.images as unknown[]).slice(0, 4).map((img, idx) => {
-                const rawPath = typeof img === "string"
-                  ? img
-                  : (img as Record<string, unknown>)?.path || (img as Record<string, unknown>)?.url || ""
-                return (
-                  <SmartQuestionImage
-                    key={`${question.id}-${idx}`}
-                    questionId={question.id}
-                    imageIndex={idx}
-                    rawPath={String(rawPath)}
-                    alt={`题目图片 ${idx + 1}`}
-                    className="w-full h-16 rounded border border-slate-100 bg-slate-50"
-                  />
-                )
-              })}
+          {question.word_content &&
+          typeof question.word_content === "object" ? (
+            // 有 word_content：以 Word 版式渲染（A4 等比缩放）
+            <WordContentView
+              content={question.word_content}
+              maxWidth={560}
+              className="border border-slate-200 rounded shadow-sm"
+            />
+          ) : (
+            // 无 word_content：原 stem + 选项 + 图片
+            <div className="prose prose-sm max-w-none [&_.katex-display]:my-1 [&_p]:my-1 [&_p:first-child]:mt-0 [&_p:last-child]:mb-0 [&_img]:max-w-full">
+              <PreviewRenderer content={question.stem || ""} />
+              {question.options && Array.isArray(question.options) && question.options.length > 0 && (
+                <div className="mt-1.5 grid grid-cols-2 gap-x-3 gap-y-0.5 not-prose">
+                  {((question.options as unknown[]) || []).map((opt, idx) => {
+                    let label = String.fromCharCode(65 + idx)
+                    let content = ""
+                    if (typeof opt === "string") {
+                      content = opt
+                    } else if (opt && typeof opt === "object") {
+                      const obj = opt as Record<string, unknown>
+                      if (obj.label) label = String(obj.label)
+                      content = String(obj.content || obj.text || "")
+                    }
+                    return (
+                      <div key={idx} className="flex items-start gap-1 min-w-0">
+                        <span className="font-medium text-slate-500 shrink-0">{label}.</span>
+                        <span className="flex-1 min-w-0 break-words">{content}</span>
+                      </div>
+                    )
+                  })}
+                </div>
+              )}
+              {/* 配图（缩略） */}
+              {question.images && question.images.length > 0 && (
+                <div className="mt-1.5 grid grid-cols-2 gap-1.5 not-prose">
+                  {(question.images as unknown[]).slice(0, 4).map((img, idx) => {
+                    const rawPath = typeof img === "string"
+                      ? img
+                      : (img as Record<string, unknown>)?.path || (img as Record<string, unknown>)?.url || ""
+                    return (
+                      <SmartQuestionImage
+                        key={`${question.id}-${idx}`}
+                        questionId={question.id}
+                        imageIndex={idx}
+                        rawPath={String(rawPath)}
+                        alt={`题目图片 ${idx + 1}`}
+                        className="w-full h-16 rounded border border-slate-100 bg-slate-50"
+                      />
+                    )
+                  })}
+                </div>
+              )}
             </div>
           )}
         </div>

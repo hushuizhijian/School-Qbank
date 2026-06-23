@@ -35,11 +35,20 @@ interface ImageState {
  * 功能：将 File 对象通过 FormData 上传，返回图片 URL
  * 输入参数：file — 待上传的图片文件
  * 返回值：图片在服务器上的 URL 字符串
+ * 修复点：
+ *   1. 原调用 /api/upload/image（后端未注册该子路径 → 404 Not Found）
+ *      改为 /api/upload 并通过 category=image 分类存储
+ *   2. 显式声明 Content-Type=multipart/form-data；否则 axios 默认
+ *      Content-Type=application/json，FormData 会被序列化成 JSON 字符串，
+ *      后端拿不到 file 字段 → body.file: Field required
  */
 const uploadImage = async (file: File): Promise<string> => {
   const formData = new FormData() // 构建 FormData
   formData.append("file", file) // 添加文件字段
-  const res = await client.post("/api/upload/image", formData) // 发送上传请求
+  formData.append("category", "image") // 图片分类
+  const res = await client.post("/api/upload", formData, {
+    headers: { "Content-Type": "multipart/form-data" }, // 覆盖默认 JSON 头
+  })
   return res.data.url // 返回图片地址
 }
 
