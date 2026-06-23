@@ -34,6 +34,11 @@ node_modules/
 **/env/
 # Poetry / PDM / uv 配置（pyproject.toml 本身保留）
 .python-version
+# SQLite 数据库与本地持久化数据（已提交的历史保留，
+# 后续运行产生的 .db/.sqlite 改动不再入版本控制）
+**/*.db
+**/*.sqlite
+**/*.sqlite3
 
 # ====== 日志与临时文件 ======
 **/logs/
